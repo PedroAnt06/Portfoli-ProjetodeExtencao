@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Orçamento Pessoal</title>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      color: #ffffff;
+    }
+
+    nav {
+      background-color: #222;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #fffb00;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 40px;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+    }
+
+    .section h2 {
+      color: #fffb00;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .team-member {
+      background: #2a2a2a;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .team-member h3 {
+      margin: 15px 0 5px;
+      color: #ffffff;
+    }
+
+    .team-member p,
+    .team-member a {
+      color: #cccccc;
+    }
+
+    .team-member a {
+      text-decoration: none;
+      color: #fffb00;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #fffb00;
+      color: #000;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    /* Barra de Progresso */
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: #fffb00;
+      width: 0;
+      z-index: 2000;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <header>
+    <h1>Calculadora de Orçamento Pessoal</h1>
+    <img src="imagens/unifil-logo.png" alt="Logo UniFil" width="150">
+  </header>
+
+  <nav>
+    <a href="#quem-somos">Quem Somos</a>
+    <a href="#explicacao">Explicação</a>
+    <a href="#comunidade">Comunidade</a>
+    <a href="#documentacao">Documentação</a>
+  </nav>
+
+  <section id="quem-somos" class="section" data-aos="fade-up">
+    <h2>Quem Somos</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="imagens/pedro.jpeg" alt="Pedro Antonio">
+        <h3>Pedro Antonio Lopes de Arruda</h3>
+        <p>Engenharia de Software</p>
+        <a href="https://github.com/PedroAnt06" target="_blank">GitHub</a>
+      </div>
+      <div class="team-member">
+        <img src="imagens/rafael.jpeg" alt="Rafael Leite">
+        <h3>Rafael Leite Torrani Persiguelo</h3>
+        <p>Engenharia de Software</p>
+        <a href="https://github.com/rafinharltp" target="_blank">GitHub</a>
+      </div>
+      <div class="team-member">
+        <img src="imagens/enrrico.jpg" alt="Enrico Kitagawa">
+        <h3>Enrico Kitagawa Alves</h3>
+        <p>Engenharia de Software</p>
+        <a href="https://github.com/Enrico008" target="_blank">GitHub</a>
+      </div>
+      <div class="team-member">
+        <img src="imagens/lucas.jpg" alt="Lucas de Lima">
+        <h3>Lucas de Lima Conninck</h3>
+        <p>Engenharia de Software</p>
+        <a href="https://github.com/lucasconninck" target="_blank">GitHub</a>
+      </div>
+      <div class="team-member">
+        <img src="imagens/gui.jpg" alt="Guilherme Pinheiro">
+        <h3>Guilherme Pinheiro Moura</h3>
+        <p>Engenharia de Software</p>
+        <a href="https://github.com/guipmoura" target="_blank">GitHub</a>
+      </div>
+      <div class="team-member">
+        <img src="imagens/rhuan.jpg" alt="Rhuan Borges">
+        <h3>Rhuan Borges de Medeiros</h3>
+        <p>Engenharia de Software</p>
+        <a href="https://github.com/RhuanBorgesM" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="explicacao" class="section" data-aos="fade-up">
+    <h2>Explicação sobre o Tema</h2>
+    <p>Nosso projeto visa criar uma Calculadora de Orçamento Pessoal para ajudar as pessoas a gerenciarem melhor suas finanças. O problema identificado é a falta de controle sobre os gastos, o que pode levar ao endividamento e dificuldades financeiras.</p>
+    <p><strong>Justificativa:</strong> Muitas pessoas não possuem conhecimento suficiente sobre educação financeira e acabam enfrentando dificuldades no final do mês. Nossa ferramenta busca simplificar esse processo, permitindo que qualquer pessoa organize sua vida financeira de maneira eficiente.</p>
+  </section>
+
+  <section id="comunidade" class="section" data-aos="fade-up">
+    <h2>Comunidade</h2>
+    <p><strong>Quem são as pessoas beneficiadas pelo projeto?</strong> Estudantes, trabalhadores, famílias e qualquer pessoa que deseja melhorar sua organização financeira.</p>
+    <p><strong>Como o projeto contribui?</strong> A calculadora permite um planejamento financeiro mais eficiente, ajudando os usuários a controlarem seus gastos, identificarem padrões de consumo e tomarem decisões mais conscientes sobre seu dinheiro.</p>
+  </section>
+
+  <section id="documentacao" class="section" data-aos="fade-up">
+    <h2>Documentação</h2>
+    <p>Você poderá acessar documentos importantes do projeto aqui.</p>
+    <a class="download-btn" href="documentos/exemplo.pdf" download>Baixar Documento de Visao PDF</a>
+    <a class="download-btn" href="documentos/exemplo.pdf" download>Baixar Documento de Visao PDF</a>
+    <a class="download-btn" href="documentos/exemplo.pdf" download>Baixar Documento de Visao PDF</a>
+    <a class="download-btn" href="documentos/exemplo.pdf" download>Baixar Documento de Visao PDF</a>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Barra de Progresso
+    const progressBar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      progressBar.style.width = scrollPercent + '%';
+    });
+  </script>
+</body>
+</html>
